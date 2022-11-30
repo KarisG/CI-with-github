@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag karisgwet/tp4_test:tagname | docker tag <bab44c8661b9> <karisgwet>/<flask-app-3>:<tag> | docker push karisgwet/tp4_test:tagname
+      run: docker build . --file Dockerfile --tag karisgwet/tp4_test:flask-app-3 | docker tag bab44c8661b9 karisgwet/tp4_test:flask-app-3 | docker push karisgwet/tp4_test:flask-app-3
