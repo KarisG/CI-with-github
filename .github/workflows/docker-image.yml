@@ -18,5 +18,5 @@ jobs:
     context: .
       dockerfile: ./backend/dockerfile
       run: echo "${{ secrets.dockerhub176 }}" | docker login -u "${{ secrets.karisgwet }}" --password-stdin docker.io
-        docker build . --file Dockerfile --tag docker.io/${{ secrets.karisgwet }}/${{ secrets.tp4_test }}:latest
-        docker push docker.io/${{ secrets.karisgwet }}/${{ secrets.karisgwet }}:latest
+        docker build . --file Dockerfile --tag docker.io/${{ secrets.karisgwet }}/${{ secrets.tp4_test }}:$latest
+        docker push docker.io/${{ secrets.karisgwet }}/${{ secrets.karisgwet }}:$latest
