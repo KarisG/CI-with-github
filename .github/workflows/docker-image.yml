@@ -17,4 +17,6 @@ jobs:
     - name: Build the Docker image
     context: .
       dockerfile: ./backend/dockerfile
-      run: docker login -u ykarisgwet -p pauline176| docker build -t karisgwet/tp4_test:latest . | docker push karisgwet/tp4_test:latest
+      run: echo "${{ secrets.dockerhub176 }}" | docker login -u "${{ secrets.karisgwet }}" --password-stdin docker.io
+        docker build . --file Dockerfile --tag docker.io/${{ secrets.karisgwet }}/${{ secrets.tp4_test }}:latest
+        docker push docker.io/${{ secrets.karisgwet }}/${{ secrets.karisgwet }}:latest
