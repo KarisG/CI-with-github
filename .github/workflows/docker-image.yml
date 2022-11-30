@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
     context: .
-      dockerfile: ./backend/dockerfile
-      run: echo "${{ secrets.dockerhub176 }}" | docker login -u "${{ secrets.karisgwet }}" --password-stdin docker.io
+      run: | 
+        echo "${{ secrets.dockerhub176 }}" | docker login -u "${{ secrets.karisgwet }}" --password-stdin docker.io
         docker build . --file Dockerfile --tag docker.io/${{ secrets.karisgwet }}/${{ secrets.tp4_test }}:flask-app-3
         docker push docker.io/${{ secrets.karisgwet }}/${{ secrets.tp4_test }}:flask-app-3
